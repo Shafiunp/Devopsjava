@@ -29,7 +29,7 @@ resource "aws_internet_gateway" "gw" {
   }
 }
 resource "aws_default_subnet" "default_az1" {
-  availability_zone = "us-west-2a"
+  availability_zone = "ap-northeast-1"
 
   tags = {
     Name = "Default subnet for us-west-2a"
@@ -37,13 +37,13 @@ resource "aws_default_subnet" "default_az1" {
 }
 resource "aws_nat_gateway" "example" {
   connectivity_type = "private"
-  subnet_id         = aws_default_vpc.default_az1.id
+  subnet_id         = aws_default_subnet.default_az1.id
 }
 resource "aws_lb" "test" {
   name               = "test-lb-tf"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.lb_sg.id]
+  security_groups    = [aws_security_group.allow_tls.id]
   subnets            = [for subnet in aws_default_subnet.public : subnet.id]
 
   enable_deletion_protection = true
