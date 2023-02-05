@@ -53,9 +53,21 @@ resource "aws_lb" "test" {
     prefix  = "test-lb"
     enabled = true
   }
-}
   tags = {
     Environment = "production"
   }
   }
+  resource "aws_instance" "foo" {
+  ami           = "ami-06ee4e2261a4dc5c3" 
+  instance_type = "t2.micro"
+}
+resource "aws_instance" "foo" {
+  ami           = "ami-06ee4e2261a4dc5c3" 
+  instance_type = "t2.micro"
+}
+resource "aws_instance" "foo" {
+  ami           = "ami-06ee4e2261a4dc5c3" 
+  instance_type = "t2.micro"
+}
+
 
