@@ -12,7 +12,7 @@ provider "aws" {
 }
 
 
-resource "aws_instance" "foo" {
+resource "aws_instance" "foo1" {
   ami           = var.foo_ami
   instance_type = var.foo_instance_type
 }
