@@ -35,7 +35,7 @@ resource "aws_default_subnet" "default_az1" {
     Name = "Default subnet for us-west-2a"
   }
 }
-resource "aws_nat_gateway" "example" {S
+resource "aws_nat_gateway" "example" {
   connectivity_type = "private"
   subnet_id         = aws_default_vpc.default_az1.id
 }
