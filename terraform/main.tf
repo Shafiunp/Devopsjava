@@ -57,15 +57,15 @@ resource "aws_lb" "test" {
     Environment = "production"
   }
   }
-  resource "aws_instance" "foo" {
+  resource "aws_instance" "foo1" {
   ami           = "ami-06ee4e2261a4dc5c3" 
   instance_type = "t2.micro"
 }
-resource "aws_instance" "foo" {
+resource "aws_instance" "foo2" {
   ami           = "ami-06ee4e2261a4dc5c3" 
   instance_type = "t2.micro"
 }
-resource "aws_instance" "foo" {
+resource "aws_instance" "foo3" {
   ami           = "ami-06ee4e2261a4dc5c3" 
   instance_type = "t2.micro"
 }
