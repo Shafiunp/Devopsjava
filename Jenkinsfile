@@ -1,20 +1,18 @@
 pipeline {
   agent any
   stages {
-    stage('Hello') {
-	agent { label "build-slave-1" }
+    stage('git-stage') {
       steps {
         sh '''
-          git --version
+          git -version
         '''
       }
     }
-stage('Hello1') {
-	agent { label "build-slave-2" }
-
+    stage('maven-stage') {
       steps {
         sh '''
-          git --version
+          mvn --version
+          mvn clean package
         '''
       }
     }
