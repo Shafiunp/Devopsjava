@@ -9,7 +9,7 @@ pipeline {
         '''
       }
     }
-stage('Hello') {
+stage('Hello1') {
 	agent { label "build-slave-2" }
       steps {
         sh '''
