@@ -2,7 +2,6 @@ pipeline {
   agent any
   stages {
     stage('Hello') {
-
 	agent { label "build-slave-1" }
       steps {
         sh '''
@@ -20,5 +19,4 @@ stage('Hello1') {
       }
     }
   }
-
 }
