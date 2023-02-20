@@ -19,7 +19,9 @@ resource "aws_instance" "foo1" {
     Name = "HelloWorld"
   }
 }
-
+resource "aws_instance" "shafiun" {
+  
+}
 
 
 
