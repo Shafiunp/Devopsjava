@@ -20,9 +20,14 @@ resource "aws_instance" "foo1" {
   }
 }
 resource "aws_instance" "shafiun" {
-  
+    ami                                  = var.foo_ami
+    instance_type                        = var.foo_instance_type
+    tags                                 = {
+        "Name" = "terraform requirement"
+    }
+    
+    
 }
-
 
 
 
