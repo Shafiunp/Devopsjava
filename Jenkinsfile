@@ -15,6 +15,22 @@ pipeline {
           mvn clean package
         '''
       }
+    
+    stage('maven-test') {
+      steps {
+        sh '''
+          mvn --version
+          mvn test
+        '''
+      }
+    }
+    stage('maven-test') {
+      steps {
+        sh '''
+          mvn --version
+          mvn test
+        '''
+      }
     }
   }
 }
