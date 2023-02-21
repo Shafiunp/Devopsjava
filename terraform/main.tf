@@ -26,6 +26,9 @@ resource "aws_instance" "shafiun" {
         "Name" = "terraform requirement"
     }   
 }
+resource "aws_instance" "delhi"{          
+  
+}
 
 
 
