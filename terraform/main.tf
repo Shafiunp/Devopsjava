@@ -24,9 +24,7 @@ resource "aws_instance" "shafiun" {
     instance_type                        = var.foo_instance_type
     tags                                 = {
         "Name" = "terraform requirement"
-    }
-    
-    
+    }   
 }
 
 
