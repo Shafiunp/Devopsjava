@@ -29,7 +29,6 @@ Name  = "internet_gateway"
 }
 # Create Public Subnet
 resource "aws_subnet" "my_public_subnet" {
-  id = var.subnet_id
 vpc_id                  = aws_vpc.my_vpc.id
 cidr_block              = "10.0.0.0/24"
 availability_zone       = "ap-south-1b"
