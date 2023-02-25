@@ -11,8 +11,6 @@ provider "aws" {
   # Configuration options
   region = var.region
 }
-  region = var.region
-}
 
 # Create VPC
 resource "aws_vpc" "my_vpc" {
@@ -58,14 +56,11 @@ subnet_id           = aws_subnet.my_public_subnet.id
 route_table_id      = aws_route_table.my_public_route_table.id
 }
 
-
-
-
 # Create Security Group 
 resource "aws_security_group" "my_security_group" {
 name        = "SSH Security Group"
 description = "Enable SSH access on Port 22"
-vpc_id      = var.vpc_id
+vpc_id      = aws_vpc.my_vpc.id
 ingress {
 description      = "SSH Access"
 from_port        = 22
@@ -90,7 +85,7 @@ ami                    = "ami-0e742cca61fb65051"
 instance_type               = var.instance_type
 key_name                    = var.key_name
 security_groups             = [aws_security_group.my_security_group.id]
-subnet_id                   = var.subnet_id
+subnet_id                   = aws_subnet.my_public_subnet.id
 associate_public_ip_address = true
 lifecycle {
 create_before_destroy = true
