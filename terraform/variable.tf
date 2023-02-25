@@ -1,6 +1,15 @@
-variable "foo_ami" {
-  description = "foo ami value" #ami-0e742cca61fb65051
+/* variable "vpc_id" {
+description = "enter vpc value"   
 }
-variable "foo_instance_type" {
-  description = "foo instance type value" # t2.micro
+variable "subnet_id" {
+description = "enter subnet value" 
+}  */
+variable "region" {
+description = "enter region value"
+}
+variable "key_name" {
+description = "enter key value"  
+}
+variable "instance_type" {
+description = "enter instance type value" 
 }
