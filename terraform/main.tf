@@ -1,4 +1,13 @@
 terraform {
+  terraform {
+  backend "s3" {
+    bucket         = "shafiun26022023"
+    key            = "terraform.tfstate"
+    region         = "ap-south-1"
+    dynamodb_table = "LockID"
+  }
+}
+
   required_providers {
     aws = {
       source = "hashicorp/aws"
